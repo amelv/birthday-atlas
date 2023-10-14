@@ -25,3 +25,21 @@ export const Countries = {
   UA: "Ukraine",
   US: "United States",
 };
+
+export enum SortOption {
+  FIRST_NAME = 'first-name',
+  LAST_NAME = 'last-name',
+  AGE = 'age'
+}
+
+export enum SortOrder {
+  ASC = 'asc',
+  DESC = 'desc'
+}
+
+export enum FilterOption {
+  BIRTHDAYS_TODAY = 'birthdays-today',
+  UPCOMING_BIRTHDAYS = 'upcoming-birthdays',
+  PAST_BIRTHDAYS = 'past-birthdays',
+  ALL = 'all'
+}

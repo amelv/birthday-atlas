@@ -1,0 +1,43 @@
+.search-tools {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  flex-basis: 300px;
+  flex-shrink: 0;
+
+  height: 100%;
+  padding: 3.6rem 2.4rem;
+  gap: 2.4rem;
+
+  overflow-y  : auto;
+  box-shadow: 0px 4px 4px 0px rgba(218, 221, 226, 0.25);
+}
+
+/* lg breakpoint */
+@media screen and (max-width: 1024px) {
+  .search-tools {
+    flex-basis: 240px;
+  }
+}
+
+/* Create a dropdown menu */
+@media (max-width: 768px) {
+  .search-tools {
+    position: fixed;
+    top: var(--header-height, 4.8rem);
+    left: 0;
+    width: 100%;
+    height: 0;
+    padding: 0;
+    background-color: #d1d3d7;
+    border: none;
+    transition: height 0.5s ease;
+  }
+
+  .search-tools.open {
+    height: 300px;
+    border-bottom: 1px solid #77787a;
+  }
+}
