@@ -1,3 +1,5 @@
+import { SortOption, SortOrder } from "@/constants";
+
 export type RandomUser = {
   dob: {
     date: string;
@@ -29,3 +31,8 @@ export type RandomUserAPIResponse = {
 export type RandomUserAPIError = {
   error: string;
 };
+
+export type SortSetting = {
+  by: SortOption | null
+  order: SortOrder
+}
