@@ -1,13 +1,20 @@
-import "@/App.css";
-import Header from "@/components/Header.tsx";
+import Header from '@/components/Header.tsx'
+import SearchTools from '@/components/SearchTools'
+import BirthdayProfiles from '@/components/BirthdayProfiles'
+import { AppContextProvider } from '@/context/AppContext'
 
-function App() {
+import './App.css'
+
+function App () {
   return (
-    <>
+    <AppContextProvider>
       <Header />
-      <div>Test</div>
-    </>
-  );
+      <div className='main-container'>
+        <SearchTools />
+        <BirthdayProfiles />
+      </div>
+    </AppContextProvider>
+  )
 }
 
-export default App;
+export default App
