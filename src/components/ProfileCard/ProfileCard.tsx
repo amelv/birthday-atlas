@@ -106,16 +106,11 @@ const ProfileCard = forwardRef(function ProfileCard(
       </div>
       <div className={`profiles-card__tag ${birthdayDetails.class}`}>
         <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: ".8rem",
-          }}
+          className="profiles-card__tag-title"
         >
-          <img src={birthdayDetails.icon} width="24" height="24" alt="" />
+          <img className="profiles-card__tag-title__icon" src={birthdayDetails.icon} alt="" />
           <h3
-            className={`profiles-card__tag-title ${birthdayDetails.class}`}
+            className="profiles-card__tag-title__text"
             id={`profile-value-${index + 1}`}
           >
             {birthdayDetails.value}

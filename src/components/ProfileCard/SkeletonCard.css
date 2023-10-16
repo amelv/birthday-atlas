@@ -27,3 +27,34 @@
   height: 24px;
   margin: 24px 0;
 }
+
+@media screen and (max-width: 768px) {
+  
+  .profiles-card__details.skeleton {
+    width: 120px;
+    height: 48px;
+  }
+
+  .profiles-card__tag-title.skeleton {
+    width: 120px;
+    height: 32px;
+    margin: 16px 0;
+  }
+
+  .profiles-card__tag-details.skeleton {
+    width: 80px;
+    height: 16px;
+    margin: 16px 0;
+  }
+
+  .profiles-card__image.skeleton {
+    width: 48px;
+    height: 48px;
+  }
+
+  .profiles-card__name.skeleton {
+    width: 80px;
+    height: 16px;
+  }
+
+}

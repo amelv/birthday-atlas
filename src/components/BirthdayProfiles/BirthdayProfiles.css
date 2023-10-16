@@ -19,3 +19,13 @@
   align-items: center;
   width: 100%;
 }
+@media screen and (max-width: 768px) {
+  .birthday-profiles-container {
+    padding: 2.4rem 1.2rem;
+  }
+  .birthday-profiles-grid {
+    /* create grid for 280px max width cards */
+    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+    grid-gap: 0.8rem;
+  }
+}
