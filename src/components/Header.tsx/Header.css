@@ -44,21 +44,21 @@
 
   .header-bar__settings-button {
     margin-right: auto;
-    padding: .48rem;
+    padding: 0.48rem;
     background-color: #f3f4f6;
     border: 1px solid #dadde2;
     box-shadow: 0px 4px 4px rgba(218, 221, 226, 0.25);
     border-radius: 6px;
     transition: background-color 0.3s ease;
+  }
 
-    &:hover {
-      background-color: #e5e7eb;
-    }
+  .header-bar__settings-button:hover {
+    background-color: #e5e7eb;
+  }
 
-    &:active {
-      background-color: #bcbec3;
-      box-shadow: 0px 2px 2px rgba(218, 221, 226, 0.25);
-    }
+  .header-bar__settings-button:active {
+    background-color: #bcbec3;
+    box-shadow: 0px 2px 2px rgba(218, 221, 226, 0.25);
   }
 
   .header-bar__settings-icon {
