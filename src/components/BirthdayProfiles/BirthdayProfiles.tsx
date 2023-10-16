@@ -1,11 +1,76 @@
-import './BirthdayProfiles.css'
+import { default as ProfileCard, SkeletonCard } from "@/components/ProfileCard";
+import { useAppContext } from "@/context/AppContext";
+import useFetchUsersQuery from "@/hooks/useFetchUsersQuery";
+import { useEffect, useMemo, useRef, useState } from "react";
+import "./BirthdayProfiles.css";
 
-function BirthdayProfiles () {
+function BirthdayProfiles() {
+  const [state] = useAppContext();
+  const users = state.users.data ?? [];
+  const isLoading = state.users.loading;
+  const [displayAmount, setDisplayAmount] = useState(10);
+
+  const profilesGridRef = useRef<HTMLElement | null>(null);
+  const firstNewDisplayedUserRef = useRef<HTMLDivElement | null>(null);
+
+  const userIds = useMemo(
+    () => crypto.getRandomValues(new Int32Array(users.length)),
+    [users]
+  );
+  const firstNewDisplayedUserIndex = useMemo(
+    () => displayAmount - 10,
+    [displayAmount]
+  );
+
+  useEffect(() => {
+    console.log(firstNewDisplayedUserRef.current);
+    firstNewDisplayedUserRef.current?.focus();
+  }, [firstNewDisplayedUserRef.current]);
+
+  useFetchUsersQuery();
+
   return (
-    <main className='birthday-profiles-container'>
-      <span>Test</span>
+    <main className="birthday-profiles-container">
+      <h2>Birthdays for {new Date().getFullYear()}</h2>
+      <section
+        className="birthday-profiles-grid"
+        role="feed"
+        aria-busy={isLoading}
+        ref={profilesGridRef}
+      >
+        {isLoading
+          ? Array.from({ length: displayAmount }).map((_, index) => (
+              <SkeletonCard key={index} />
+            ))
+          : users
+              .slice(0, displayAmount)
+              .map((user, index) => (
+                <ProfileCard
+                  key={userIds[index]}
+                  user={user}
+                  id={userIds[index]}
+                  index={index}
+                  displayAmount={displayAmount}
+                  ref={
+                    index === firstNewDisplayedUserIndex
+                      ? firstNewDisplayedUserRef
+                      : null
+                  }
+                />
+              ))}
+      </section>
+      <button
+        style={{ padding: "1.2rem", fontSize: "20px", marginTop: "2rem" }}
+        onClick={() => {
+          setDisplayAmount((prevAmount) => {
+            return prevAmount + 10;
+          });
+        }}
+      >
+        View More Profiles
+      </button>
     </main>
-  )
+  );
 }
 
-export default BirthdayProfiles
+export default BirthdayProfiles;
