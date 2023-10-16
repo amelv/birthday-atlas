@@ -2,6 +2,7 @@ import { API_BASE_URL } from "@/constants";
 import { RandomUserAPIError, RandomUserAPIResponse } from "@/types";
 
 const MAX_USERS = 100;
+
 // Include only the fields we need to reduce the payload size:
 // Name, nationality, date of birth, and picture
 const INCLUDE_OPTIONS = "inc=name,nat,dob,picture";
@@ -27,3 +28,15 @@ export async function fetchUsers() {
     throw error as RandomUserAPIError;
   }
 }
+
+/**
+ * Get the ordinal age of a person
+ * @param n
+ * @returns
+ */
+export const getOrdinalAge = (n: number) => {
+  // 1st, 2nd, 3rd, 4th, etc.
+  const s = ["th", "st", "nd", "rd"];
+  const v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+};

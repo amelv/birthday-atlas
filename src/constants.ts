@@ -2,7 +2,7 @@ export const API_BASE_URL = "https://randomuser.me/api/";
 
 export const USER_PAGE_SIZE = 10;
 
-export const Countries = {
+export const Countries: Record<string, string> = {
   AU: "Australia",
   BR: "Brazil",
   CA: "Canada",
@@ -27,19 +27,19 @@ export const Countries = {
 };
 
 export enum SortOption {
-  FIRST_NAME = 'first-name',
-  LAST_NAME = 'last-name',
-  AGE = 'age'
+  FIRST_NAME = "first-name",
+  LAST_NAME = "last-name",
+  AGE = "age",
 }
 
 export enum SortOrder {
-  ASC = 'asc',
-  DESC = 'desc'
+  ASC = "asc",
+  DESC = "desc",
 }
 
 export enum FilterOption {
-  BIRTHDAYS_TODAY = 'birthdays-today',
-  UPCOMING_BIRTHDAYS = 'upcoming-birthdays',
-  PAST_BIRTHDAYS = 'past-birthdays',
-  ALL = 'all'
+  BIRTHDAYS_TODAY = "birthdays-today",
+  UPCOMING_BIRTHDAYS = "upcoming-birthdays",
+  PAST_BIRTHDAYS = "past-birthdays",
+  ALL = "all",
 }
