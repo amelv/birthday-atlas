@@ -1,4 +1,4 @@
-.profiles-card__image.skeleton {
+.profile-card__image.skeleton {
   width: 72px;
   height: 72px;
 
@@ -6,55 +6,53 @@
   border: 1px solid rgba(61, 61, 61, 0.2);
 }
 
-.profiles-card__name.skeleton {
+.profile-card__name.skeleton {
   width: 120px;
   height: 24px;
 }
 
-.profiles-card__details.skeleton {
+.profile-card__details.skeleton {
   width: 200px;
   height: 72px;
 }
 
-.profiles-card__tag-title.skeleton {
+.profile-card__tag-title.skeleton {
   width: 200px;
   height: 40px;
   margin: 24px 0;
 }
 
-.profiles-card__tag-details.skeleton {
+.profile-card__tag-details.skeleton {
   width: 120px;
   height: 24px;
   margin: 24px 0;
 }
 
 @media screen and (max-width: 768px) {
-  
-  .profiles-card__details.skeleton {
+  .profile-card__details.skeleton {
     width: 120px;
     height: 48px;
   }
 
-  .profiles-card__tag-title.skeleton {
+  .profile-card__tag-title.skeleton {
     width: 120px;
     height: 32px;
     margin: 16px 0;
   }
 
-  .profiles-card__tag-details.skeleton {
+  .profile-card__tag-details.skeleton {
     width: 80px;
     height: 16px;
     margin: 16px 0;
   }
 
-  .profiles-card__image.skeleton {
+  .profile-card__image.skeleton {
     width: 48px;
     height: 48px;
   }
 
-  .profiles-card__name.skeleton {
+  .profile-card__name.skeleton {
     width: 80px;
     height: 16px;
   }
-
 }

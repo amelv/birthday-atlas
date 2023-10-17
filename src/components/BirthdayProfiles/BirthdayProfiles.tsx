@@ -30,10 +30,12 @@ function BirthdayProfiles() {
   useFetchUsersQuery();
 
   return (
-    <main className="birthday-profiles-container">
-      <h2>Birthdays for {new Date().getFullYear()}</h2>
+    <main className="birthday-profiles__container">
+      <h2 className="birthday-profiles__title">
+        Birthdays for {new Date().getFullYear()}
+      </h2>
       <section
-        className="birthday-profiles-grid"
+        className="birthday-profiles__grid"
         role="feed"
         aria-busy={isLoading}
         ref={profilesGridRef}

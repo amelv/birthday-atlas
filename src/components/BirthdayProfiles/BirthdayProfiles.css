@@ -1,4 +1,4 @@
-.birthday-profiles-container {
+.birthday-profiles__container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,10 +8,16 @@
   overflow-y: auto;
 }
 
-.birthday-profiles-grid {
+.birthday-profiles__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 2.4rem;
+  text-align: center;
+}
+
+.birthday-profiles__grid {
   display: grid;
 
-  /* create grid for 360px max width cards */
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
   grid-auto-rows: 1fr;
   grid-gap: 2.4rem;
@@ -19,11 +25,17 @@
   align-items: center;
   width: 100%;
 }
+
+.birthday-profiles__view_more_button {
+  margin-top: 2.4rem;
+  width: 100%;
+}
+
 @media screen and (max-width: 768px) {
-  .birthday-profiles-container {
+  .birthday-profiles__container {
     padding: 2.4rem 1.2rem;
   }
-  .birthday-profiles-grid {
+  .birthday-profiles__grid {
     /* create grid for 280px max width cards */
     grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
     grid-gap: 0.8rem;

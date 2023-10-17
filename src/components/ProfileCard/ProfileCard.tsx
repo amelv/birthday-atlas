@@ -78,7 +78,7 @@ const ProfileCard = forwardRef(function ProfileCard(
   const birthdayDetails = getBirthdayDetails(user);
   return (
     <div
-      className="profiles-card"
+      className="profile-card"
       role="article"
       aria-posinset={index + 1}
       tabIndex={0}
@@ -87,12 +87,12 @@ const ProfileCard = forwardRef(function ProfileCard(
       aria-setsize={displayAmount}
       ref={ref}
     >
-      <div className={`profiles-card__main`}>
-        <img className="profiles-card__image" src={user.picture.large} alt="" />
-        <h3 className="profiles-card__name" id={`profile-name-${index + 1}`}>
+      <div className={`profile-card__main`}>
+        <img className="profile-card__image" src={user.picture.large} alt="" />
+        <h3 className="profile-card__name" id={`profile-name-${index + 1}`}>
           {user.name.first} {user.name.last}
         </h3>
-        <div className="profiles-card__details">
+        <div className="profile-card__details">
           <p>
             From: <span style={{ fontWeight: 600 }}>{Countries[user.nat]}</span>
           </p>
@@ -104,19 +104,21 @@ const ProfileCard = forwardRef(function ProfileCard(
           </p>
         </div>
       </div>
-      <div className={`profiles-card__tag ${birthdayDetails.class}`}>
-        <div
-          className="profiles-card__tag-title"
-        >
-          <img className="profiles-card__tag-title__icon" src={birthdayDetails.icon} alt="" />
+      <div className={`profile-card__tag ${birthdayDetails.class}`}>
+        <div className="profile-card__tag-title">
+          <img
+            className="profile-card__tag-title__icon"
+            src={birthdayDetails.icon}
+            alt=""
+          />
           <h3
-            className="profiles-card__tag-title__text"
+            className="profile-card__tag-title__text"
             id={`profile-value-${index + 1}`}
           >
             {birthdayDetails.value}
           </h3>
         </div>
-        <p className="profiles-card__tag-details">{birthdayDetails.caption}</p>
+        <p className="profile-card__tag-details">{birthdayDetails.caption}</p>
       </div>
     </div>
   );
