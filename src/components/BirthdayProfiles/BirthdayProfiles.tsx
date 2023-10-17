@@ -62,7 +62,7 @@ function BirthdayProfiles() {
               ))}
       </section>
       <button
-        style={{ padding: "1.2rem", fontSize: "20px", marginTop: "2rem" }}
+        className="birthday-profiles__view_more_button"
         onClick={() => {
           setDisplayAmount((prevAmount) => {
             return prevAmount + 10;
