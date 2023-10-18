@@ -40,9 +40,11 @@ export enum SortOrder {
   DESC = "desc",
 }
 
+/* Later Enhancement
 export enum FilterOption {
   BIRTHDAYS_TODAY = "birthdays-today",
   UPCOMING_BIRTHDAYS = "upcoming-birthdays",
   PAST_BIRTHDAYS = "past-birthdays",
   ALL = "all",
 }
+*/
