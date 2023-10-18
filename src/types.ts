@@ -33,12 +33,13 @@ export type RandomUserAPIError = {
 };
 
 export type SortSetting = {
-  by: SortOption | null;
+  by: SortOption;
   order: SortOrder;
 };
 
 export interface AppUsersState {
-  data: RandomUser[] | null;
+  dataCache: RandomUser[];
+  displayList: RandomUser[];
   loading: boolean;
   error: string | null;
 }
