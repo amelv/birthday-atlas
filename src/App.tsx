@@ -1,6 +1,6 @@
 import BirthdayProfiles from "@/components/BirthdayProfiles";
+import ExploreTools from "@/components/ExploreTools";
 import Header from "@/components/Header.tsx";
-import SearchTools from "@/components/SearchTools";
 import { AppContextProvider } from "@/context/AppContext";
 
 import "./App.css";
@@ -10,7 +10,7 @@ function App() {
     <AppContextProvider>
       <Header />
       <div className="main-container">
-        <SearchTools />
+        <ExploreTools />
         <BirthdayProfiles />
       </div>
     </AppContextProvider>

@@ -27,9 +27,12 @@ export const Countries: Record<string, string> = {
 };
 
 export enum SortOption {
-  FIRST_NAME = "first-name",
-  LAST_NAME = "last-name",
-  AGE = "age",
+  DEFAULT = "",
+  FIRST_NAME = "First Name",
+  LAST_NAME = "Last Name",
+  AGE = "Age",
+  COUNTRY = "Country",
+  BIRTHDAY = "Birthday",
 }
 
 export enum SortOrder {
@@ -37,9 +40,11 @@ export enum SortOrder {
   DESC = "desc",
 }
 
+/* Later Enhancement
 export enum FilterOption {
   BIRTHDAYS_TODAY = "birthdays-today",
   UPCOMING_BIRTHDAYS = "upcoming-birthdays",
   PAST_BIRTHDAYS = "past-birthdays",
   ALL = "all",
 }
+*/

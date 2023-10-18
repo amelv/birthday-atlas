@@ -1,4 +1,4 @@
-import { FilterOption, SortOption, SortOrder } from "@/constants";
+import { SortOption, SortOrder } from "@/constants";
 
 export type RandomUser = {
   dob: {
@@ -33,21 +33,22 @@ export type RandomUserAPIError = {
 };
 
 export type SortSetting = {
-  by: SortOption | null;
+  by: SortOption;
   order: SortOrder;
 };
 
 export interface AppUsersState {
-  data: RandomUser[] | null;
+  dataCache: RandomUser[];
+  displayList: RandomUser[];
   loading: boolean;
   error: string | null;
 }
 
-export interface AppSettingsState {
-  query: string;
+export interface AppExploreState {
+  /* query: string; */
   sort: SortSetting;
-  ageRange: [number, number];
+  /* ageRange: [number, number];
   filterBy: {
     [option in FilterOption]: boolean;
-  };
+  }; */
 }

@@ -1,15 +1,16 @@
-import { FilterOption, SortOrder } from "@/constants";
+import { SortOption, SortOrder } from "@/constants";
 import {
-  AppSettingsState,
+  AppExploreState,
   AppUsersState,
   RandomUser,
   SortSetting,
 } from "@/types";
+import { sortUsers } from "@/utils";
 import { ReactNode, createContext, useContext, useReducer } from "react";
 
 interface AppState {
   users: AppUsersState;
-  searchSettings: AppSettingsState;
+  exploreSettings: AppExploreState;
   isSearchToolsOpen: boolean;
 }
 
@@ -17,10 +18,12 @@ type AppAction =
   | { type: "SET_USERS_LOADING" }
   | { type: "SET_USERS_LOADED"; payload: RandomUser[] }
   | { type: "SET_USERS_ERROR"; payload: string }
-  | { type: "SET_QUERY"; payload: string }
   | { type: "SET_SORT"; payload: SortSetting }
+  /*
+  | { type: "SET_QUERY"; payload: string }
   | { type: "SET_AGE_RANGE"; payload: [number, number] }
   | { type: "TOGGLE_FILTER"; payload: FilterOption }
+  */
   | { type: "TOGGLE_SEARCH_TOOLS" };
 
 function appReducer(state: AppState, action: AppAction): AppState {
@@ -39,7 +42,8 @@ function appReducer(state: AppState, action: AppAction): AppState {
       return {
         ...state,
         users: {
-          data: action.payload,
+          dataCache: action.payload,
+          displayList: action.payload,
           loading: false,
           error: null,
         },
@@ -55,29 +59,38 @@ function appReducer(state: AppState, action: AppAction): AppState {
         },
       };
 
-    case "SET_QUERY":
+    case "SET_SORT":
+      const sort = action.payload;
       return {
         ...state,
-        searchSettings: {
-          ...state.searchSettings,
-          query: action.payload,
+        users: {
+          ...state.users,
+          displayList:
+            sort.by === SortOption.DEFAULT
+              ? state.users.dataCache
+              : sortUsers(state.users.dataCache ?? [], sort.by, sort.order),
+        },
+        exploreSettings: {
+          ...state.exploreSettings,
+          sort: sort,
         },
       };
 
-    case "SET_SORT":
-      return {
-        ...state,
-        searchSettings: {
-          ...state.searchSettings,
-          sort: action.payload,
-        },
-      };
+    /*
+      case "SET_QUERY":
+        return {
+          ...state,
+          exploreSettings: {
+            ...state.exploreSettings,
+            query: action.payload,
+          },
+        };
 
     case "SET_AGE_RANGE":
       return {
         ...state,
-        searchSettings: {
-          ...state.searchSettings,
+        exploreSettings: {
+          ...state.exploreSettings,
           ageRange: action.payload,
         },
       };
@@ -85,15 +98,15 @@ function appReducer(state: AppState, action: AppAction): AppState {
     case "TOGGLE_FILTER":
       return {
         ...state,
-        searchSettings: {
-          ...state.searchSettings,
+        exploreSettings: {
+          ...state.exploreSettings,
           filterBy: {
-            ...state.searchSettings.filterBy,
-            [action.payload]: !state.searchSettings.filterBy[action.payload],
+            ...state.exploreSettings.filterBy,
+            [action.payload]: !state.exploreSettings.filterBy[action.payload],
           },
         },
       };
-
+      */
     case "TOGGLE_SEARCH_TOOLS":
       return {
         ...state,
@@ -107,22 +120,15 @@ function appReducer(state: AppState, action: AppAction): AppState {
 
 const initialAppState: AppState = {
   users: {
-    data: [],
+    dataCache: [],
+    displayList: [],
     loading: false,
     error: null,
   },
-  searchSettings: {
-    query: "",
+  exploreSettings: {
     sort: {
-      by: null,
-      order: SortOrder.ASC,
-    },
-    ageRange: [0, 100],
-    filterBy: {
-      [FilterOption.BIRTHDAYS_TODAY]: false,
-      [FilterOption.UPCOMING_BIRTHDAYS]: false,
-      [FilterOption.PAST_BIRTHDAYS]: false,
-      [FilterOption.ALL]: true,
+      by: SortOption.DEFAULT,
+      order: SortOrder.DESC,
     },
   },
   isSearchToolsOpen: false,
