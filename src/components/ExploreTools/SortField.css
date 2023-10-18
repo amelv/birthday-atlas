@@ -1,0 +1,40 @@
+#sort-by {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#sort-field {
+  gap: 0;
+}
+
+#sort-order-toggle {
+  height: 2.4rem;
+  border: 1px solid #d1d3d7;
+  border-radius: 0 0.4rem 0.4rem 0;
+  border-left: 0;
+  font-size: 14px;
+  color: #1a1a1a;
+  background-color: #fff;
+
+  padding: 0.2rem;
+}
+
+#sort-order-toggle:hover {
+  background-color: #e5e7eb;
+}
+
+#sort-order-toggle:active {
+  background-color: #bcbec3;
+  box-shadow: 0px 2px 2px rgba(218, 221, 226, 0.25);
+}
+
+#sort-order-toggle:focus {
+  outline: none;
+  border: 1px solid #1a1a1a;
+}
+
+#sort-order-toggle:disabled {
+  background-color: #d1d3d7;
+  border: 1px solid #d1d3d7;
+  color: #77787a;
+}
