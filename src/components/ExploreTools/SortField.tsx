@@ -77,6 +77,7 @@ function SortField() {
           className="explore-tools__form-toggle"
           id="sort-order-toggle"
           type="button"
+          aria-label={sort.by === SortOption.DEFAULT ? 'Default sort' : `Toggle sort order: ${sort.order}`}
           disabled={sort.by === SortOption.DEFAULT ? true : false}
           onClick={handleToggle}
         >
