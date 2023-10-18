@@ -41,4 +41,10 @@
     grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
     grid-gap: 0.8rem;
   }
+
+  .birthday-profiles__view_more_button {
+    padding: 1.2rem;
+    font-size: 14px;
+    margin-top: 2rem;
+  }
 }
