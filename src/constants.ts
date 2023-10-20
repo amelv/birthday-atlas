@@ -36,8 +36,8 @@ export enum SortOption {
 }
 
 export enum SortOrder {
-  ASC = "asc",
-  DESC = "desc",
+  ASC = "Ascending",
+  DESC = "Descending",
 }
 
 /* Later Enhancement
