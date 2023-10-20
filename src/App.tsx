@@ -1,6 +1,6 @@
 import BirthdayProfiles from "@/components/BirthdayProfiles";
 import ExploreTools from "@/components/ExploreTools";
-import Header from "@/components/Header.tsx";
+import Header from "@/components/Header";
 import { AppContextProvider } from "@/context/AppContext";
 
 import "./App.css";

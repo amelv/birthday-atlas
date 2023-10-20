@@ -13,6 +13,7 @@ function Header() {
       ) : (
         <button
           className="header-bar__settings-button"
+          aria-label="Toggle Search Tools Menu"
           onClick={() => dispatch({ type: "TOGGLE_SEARCH_TOOLS" })}
         >
           <img
