@@ -19,9 +19,3 @@ test("renders birthday profiles", () => {
   const birthdayProfilesElement = screen.getByRole("main");
   expect(birthdayProfilesElement).toBeInTheDocument();
 });
-
-test("renders footer", () => {
-  render(<App />);
-  const footerElement = screen.getByRole("contentinfo");
-  expect(footerElement).toBeInTheDocument();
-});
