@@ -1,12 +1,7 @@
 import { SortOption, SortOrder } from "@/constants";
-import {
-  AppAction,
-  AppContextType,
-  AppState,
-} from "@/types";
+import { AppAction, AppContextType, AppState } from "@/types";
 import { sortUsers } from "@/utils";
 import { ReactNode, createContext, useContext, useReducer } from "react";
-
 
 function appReducer(state: AppState, action: AppAction): AppState {
   switch (action.type) {
@@ -115,7 +110,6 @@ const initialAppState: AppState = {
   },
   isSearchToolsOpen: false,
 };
-
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
