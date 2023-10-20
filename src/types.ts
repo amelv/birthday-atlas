@@ -71,4 +71,4 @@ export type AppAction =
   */
   | { type: "TOGGLE_SEARCH_TOOLS" };
 
-  export type AppContextType = [AppState, React.Dispatch<AppAction>];
+export type AppContextType = [AppState, React.Dispatch<AppAction>];
