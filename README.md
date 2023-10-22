@@ -17,7 +17,7 @@ A web app for exploring people's birthdays. See who has already celebrated, has 
 2. Install dependencies
    `yarn install`
 3. Start the server
-   `yarn start`
+   `yarn dev`
 4. Navigate to [localhost:3000](http://localhost:3000) in your browser (or whatever port you specified in the terminal)
 
 ## Built With
