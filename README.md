@@ -4,7 +4,8 @@ NOTE: This is an example project to showcase my React skills. Built in 2 weeks f
 
 A web app for exploring people's birthdays. See who has already celebrated, has one upcoming, or whose special day is today!
 
-<img width="1598" height="729" alt="Screenshot from 2025-08-27 08-50-45" src="https://github.com/user-attachments/assets/c5aa6f9a-24df-48b8-88bb-590f2ab3ff2a" />
+<img width="1599" height="735" alt="Screenshot from 2025-08-27 09-07-00" src="https://github.com/user-attachments/assets/14442a75-f78c-487a-b28f-f652d85bd983" />
+
 
 ## Getting Started
 
