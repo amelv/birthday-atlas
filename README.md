@@ -1,6 +1,10 @@
 # The Birthday Atlas 🎉
 
+NOTE: This is an example project to showcase my React skills. Built in 2 weeks for a previous job application.
+
 A web app for exploring people's birthdays. See who has already celebrated, has one upcoming, or whose special day is today!
+
+<img width="1598" height="729" alt="Screenshot from 2025-08-27 08-50-45" src="https://github.com/user-attachments/assets/c5aa6f9a-24df-48b8-88bb-590f2ab3ff2a" />
 
 ## Getting Started
 
